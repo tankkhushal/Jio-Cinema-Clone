@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JioCinema Header</title>
+    <link rel="stylesheet" type="text/css" href="remix/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+</head>
+<style>
+            body {
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: #060505;
+       }
+
+       a {
+           text-decoration: none;
+           display: inline-block;
+       }
+
+       .d-flex {
+           display: flex;
+       }
+
+       header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           background-color: #3e2723;
+           padding: 15px 20px;
+           color: white;
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           z-index: 1000; 
+       }
+
+       .logo {
+           display: flex;
+           align-items: center;
+       }
+
+       .logo img {
+           height: 40px;
+           margin-right: 10px;
+       }
+
+       .go-premium {
+           display: flex;
+           align-items: center;
+           background-color: #3e2723;
+           color: #ad9471;
+           border: 2px solid #a89273;
+           border-radius: 20px;
+           padding: 0 10px;
+           margin: 0;
+           cursor: pointer;
+           font-weight: bold;
+       }
+
+       .go-premium img {
+           margin-right: 5px;
+       }
+
+       .go-premium:hover {
+           background-color: #a89273;
+           color: white;
+       }
+
+       .nav-active {
+           padding-bottom: 5px;
+           color: white;
+           border-bottom: 2px solid #D9008D;
+       }
+
+       .navigation ul {
+           list-style: none;
+           margin: 0;
+           padding: 0;
+           display: flex;
+       }
+
+       .navigation li {
+           margin: 0 15px;
+       }
+
+       .navigation a {
+           color: rgb(210, 202, 202);
+           text-decoration: none;
+           font-size: 18px;
+           font-weight: bold;
+       }
+
+       .navigation a:hover {
+           color: white;
+       }
+
+       .dropdown-icon {
+           font-size: 12px;
+       }
+
+       .search-bar {
+           display: flex;
+           align-items: center;
+           background-color: #573d36;
+           border-radius: 20px;
+           padding: 5px 10px;
+       }
+
+       .search-bar input {
+           padding: 5px;
+           font-size: 16px;
+           border: none;
+           border-radius: 20px;
+           outline: none;
+           background-color: transparent;
+           color: white;
+       }
+
+       .search-button,
+       .voice-search {
+           background: none;
+           border: none;
+           cursor: pointer;
+           margin-left: 10px;
+       }
+
+       .search-button img,
+       .voice-search img {
+           height: 20px;
+           width: 20px;
+       }
+
+       .user-profile img {
+           height: 40px;
+           border-radius: 50%;
+           cursor: pointer;
+       }
+
+       .navba {
+           background-color: #3e2a16;
+           padding: 10px 0;
+           /* position: relative; */
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           position: fixed;
+           top: 60px; /* Adjust based on header height */
+           left: 0;
+           width: 100%;
+           z-index: 1000;
+       }
+
+       .navba .slick-track {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+
+       ::-webkit-scrollbar {
+           width: 0;
+           height: 0;
+       }
+
+       .nav-lis {
+           list-style-type: none;
+           margin: 0;
+           padding: 0;
+           display: flex;
+           justify-content: center;
+           flex-wrap: wrap;
+           width: 100%;
+           max-width: 1200px;
+           overflow: hidden;
+       }
+
+       .nav-ite {
+           background-color: #4d3c2e;
+           color: white;
+           padding: 10px 20px;
+           margin: 5px;
+           width: 120px !important;
+           border-radius: 20px;
+           cursor: pointer;
+           font-size: 13px;
+           transition: background-color 0.3s;
+       }
+
+       .nav-ite a {
+           color: white;
+           text-decoration: none;
+           font-size: 13px;
+           font-weight: 900;
+       }
+
+       .nav-ite:hover {
+           background-color: #5c4d40;
+       }
+
+       .prev,
+       .next {
+           background-color: #4d3c2e;
+           border: none;
+           width: 50px;
+           height: 50px;
+           border-radius: 50%;
+           padding: 5px;
+           cursor: pointer;
+           position: absolute;
+           top: 50%;
+           font-size: 30px;
+           color: white;
+           transform: translateY(-50%);
+           z-index: 1;
+       }
+       
+       .swiper-button-next,
+        .swiper-button-prev {
+            width: 24px;
+            height: 24px;
+            color:#FFFFFF; 
+            border-radius: 50%; 
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 16px;
+        }
+       .prev {
+           left: 50px;
+       }
+
+       .next {
+           right: 50px;
+       }
+
+       .selected {
+           background-color: white;
+           color: black;
+       }
+
+       .center {
+           margin:220px 20px auto auto;
+           
+       }
+
+       .slide {
+           position: relative;
+           text-align: center;
+           padding: 0 10px;
+       }
+
+       .slide img,
+       .slide video {
+           width: 914px;
+           height: 450px;
+           ;
+           border-radius: 10px;
+       }
+
+       .center .slick-next {
+           right: 114px;
+           top: 438px;
+       }
+
+       .center .slick-prev {
+           left: 1216px;
+           top: 438px;
+       }
+
+       .center .slick-prev,
+       .center .slick-next {
+           z-index: 99;
+       }
+
+       .center .slick-prev:before,
+       .center .slick-next:before {
+           font-size: 50px;
+           color: #716358;
+       }
+
+       .channel-logo {
+           width: 119px;
+           height: 119px;
+       }
+
+       .channel-item {
+           text-align: center;
+           margin: 10px;
+       }
+
+       .channel-row,
+       .Watch-In-Your-Language-row {
+           margin-top: 30px;
+           display: flex;
+           flex-wrap: wrap;
+       }
+
+       .spotlight-section {
+           padding: 20px;
+           padding-bottom: 30px;
+           flex-flow: wrap;
+       }
+
+
+       .card-1 img {
+           width: 631px;
+           height: 355px;
+           ;
+           border: none;
+           margin-left: 10px;
+           border-radius: 10px;
+           overflow: hidden;
+       }
+
+
+       .hotright-slider {
+           display: flex;
+           transition: transform 0.5s ease;
+           margin-bottom: 20px;
+       }
+
+       .spotlight-section h2,
+       .hotright-section h2,
+       .Fresh-Episodes-section h2,
+       .Top-Sports-Picks-section h2,
+       .Must-Watch-Movies-section h2,
+       .Top-Picks-For-You-section h2,
+       .Peacock-Finest-section h2,
+       .Top-Trending-This-Week-section h2,
+       .Endless-Entertainment-section h2,
+       .Top-10-In-India-section h2,
+       .T20-World-Cup-2024-section h2,
+       .World-Of-Anime-section h2,
+       .coming-soon-section h2,
+       .Most-Watched-In-Creators-Adda-section h2,
+       .What-It-Takes-To-Be-An-Olympian-section h2,
+       .Watch-In-Your-Language-section h2,
+       .Popular-In-Kids-Family-section h2,
+       .Hollywood-In-Hindi-section h2,
+       .Popular-Sports-section h2,
+       .Best-Of-Studio-section h2 {
+           font-size: 1.375rem;
+           font-weight: 800;
+           color: white;
+           margin: 0 0 30px 30px;
+       }
+
+       .slide-2 img {
+           width: 300px;
+           height: 300px;
+           border-radius: 10px;
+           margin: 10px;
+           background-color: #333;
+           border-radius: 10px;
+           position: relative;
+           display: inline-block;
+       }
+   .swiper-button-next {
+    font-size: 20px !important;
+   }
+       .hotright-slider .slick-next {
+           z-index: 99;
+           right: 25px;
+           font-size: 50px;
+       }
+
+       .hotright-slider .slick-prev {
+           z-index: 99;
+           left: 25px;
+           font-size: 50px;
+       }
+
+
+       /* Fresh-Episodes-section */
+
+
+
+       .swiper {
+           width: 100%;
+           height: 100%;
+       }
+
+       .swiper-wrapper {
+           margin-left: 20px !important;
+       }
+
+       .swiper-slide {
+           text-align: center;
+           font-size: 18px;
+           background: #fff;
+           display: flex;
+           width: 204px !important;
+           border-radius: 10px !important;
+           border: none !important;
+           justify-content: center;
+           align-items: center;
+       }
+
+       .swiper-slide img {
+           display: block;
+           width: 204px !important;
+           height: 272px !important;
+           border-radius: 10px !important;
+           object-fit: cover;
+       }
+
+       .category-tabs,
+       .Top-Sports-Picks-section,
+       .Top-Picks-For-You-section,
+       .Must-Watch-Movies-section,
+       .Peacock-Finest-section,
+       .Top-Trending-This-Week-section,
+       .Endless-Entertainment-section,
+       .Top-10-In-India-section,
+       .T20-World-Cup-2024-section,
+       .World-Of-Anime-section,
+       .coming-soon-section,
+       .Most-Watched-In-Creators-Adda-section,
+       .What-It-Takes-To-Be-An-Olympian-section,
+       .Popular-In-Kids-Family-section,
+       .Watch-In-Your-Language-section,
+       .Hollywood-In-Hindi-section,
+       .Popular-Sports-section,
+       .Best-Of-Studio-section {
+           padding-bottom: 30px;
+       }
+
+       .category-tabs .nav .nav-item .nav-link {
+           color: rgb(210, 202, 202);
+           font-size: 13px;
+           font-weight: 900;
+       }
+
+       .category-tabs .nav .nav-item .nav-link:hover {
+           color: white !important;
+           ;
+       }
+
+       .category-tabsfocused {
+           color: #D9008D !important;
+           border-bottom: 2px solid #D9008D !important;
+       }
+
+       /* Top-Sports-Picks-section */
+
+       .Top-Sports-Picks-section h2 {
+           margin-top: 20px;
+       }
+
+       .Celebrating-Pride-Month-section {
+           position: relative;
+           padding: 20px;
+           color: #fff;
+           overflow: hidden;
+       }
+
+       .Celebrating-Pride-Month-section::before {
+           content: "";
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background-image: url('../image/bg.avif');
+           background-repeat: no-repeat;
+           background-size: cover;
+           z-index: -1;
+           opacity: 0.5;
+       }
+
+       .Celebrating-Pride-Month-section h1 {
+           font-size: 2.5em;
+           margin-bottom: 10px;
+       }
+
+       .Celebrating-Pride-Month-section p {
+           font-size: 1.2em;
+           margin-bottom: 30px;
+       }
+
+       .carousel {
+           display: flex;
+           gap: 15px;
+           overflow-x: auto;
+           padding: 10px 0;
+       }
+
+       .carousel img {
+           border-radius: 10px;
+           width: 150px;
+           height: 225px;
+           object-fit: cover;
+           transition: transform 0.3s;
+       }
+
+       .carousel::-webkit-scrollbar {
+           display: none;
+       }
+
+       /* coming-soon-section */
+
+       .coming-soon-section,
+       .What-It-Takes-To-Be-An-Olympian-section {
+           margin-left: 20px;
+       }
+
+       .coming-soon-section h2,
+       .What-It-Takes-To-Be-An-Olympian-section h2 {
+           margin-bottom: 20px;
+       }
+
+       .coming-soon-carousel {
+           display: flex;
+           gap: 20px;
+       }
+
+       .card2,
+       .card3 {
+           background-color: #1c1c1c;
+           border-radius: 10px;
+           overflow: hidden;
+           width: 204px !important;
+           height: 272px !important;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+           transition: transform 0.3s;
+       }
+
+       .card2 img,
+       .card3 img {
+           width: 204px !important;
+           height: 272px !important;
+           height: auto;
+       }
+
+       .card2:hover,
+       .card3:hover {
+           transform: scale(1.05);
+       }
+
+       .Most-Watched-In-Creators-Adda-section .swiper .swiper-wrapper .swiper-slide,
+       .Most-Watched-In-Creators-Adda-section .swiper .swiper-wrapper .swiper-slide img {
+           width: 419px !important;
+           height: 235.69px !important;
+       }
+
+       /* footer */
+
+       footer {
+           background-color: #151515;
+           color: #fff;
+           padding: 20px 0;
+       }
+
+       .footer-container {
+           display: flex;
+           justify-content: space-around;
+           flex-wrap: wrap;
+           padding: 20px;
+       }
+
+       .footer-section {
+           margin: 10px;
+       }
+
+       .footer-section h3 {
+           font-size: 18px;
+           margin-bottom: 10px;
+       }
+
+       .footer-section ul {
+           list-style: none;
+           padding: 0;
+       }
+
+       .footer-section ul li {
+           margin: 5px 0;
+       }
+
+       .footer-section ul li a {
+           color: #fff;
+           text-decoration: none;
+       }
+
+       .footer-section ul li a:hover {
+           text-decoration: underline;
+       }
+
+       .social-media a {
+           margin: 0 10px;
+           display: inline-block;
+       }
+
+       .social-media img {
+           width: 24px;
+           height: 24px;
+       }
+
+       .download .app-links a {
+           display: inline-block;
+           margin: 10px;
+       }
+
+       .download .app-links img {
+           width: 120px;
+       }
+
+       .footer-bottom {
+           border-top: 1px solid #333;
+           padding-top: 10px;
+           margin-top: 20px;
+           display: flex;
+           justify-content: space-between;
+
+           flex-wrap: wrap;
+       }
+
+       .footer-bottom p {
+           margin: 0;
+       }
+
+       .footer-bottom img {
+           width: 40px;
+       }
+</style>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/jc_logo_v2.svg" alt="JioCinema Logo">
+            <button class="go-premium"><img class="go-premiumimg" src="image/crown.svg" alt="" width="16px"
+                    height="16px">Go Premium</button>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="https://www.jiocinema.com/sports">Sports</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">More <span class="dropdown-icon">▼</span></a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <button class="search-button"><img src="image/ic_search.svg" alt="Search"></button>
+            <input type="text" placeholder="Movies, Shows and more">
+            <button class="voice-search"><img src="image/voice-search.svg" alt="Voice Search"></button>
+        </div>
+        <div class="user-profile">
+            <img src="image/avatar_guest.svg" alt="User Profile">
+        </div>
+    </header>
+    <nav class="navba">
+        <button class="prev"><i class="ri-arrow-drop-left-line"></i></button>
+        <ul class="nav-lis">
+            <li class="nav-ite selected">For You</li>
+            <li class="nav-ite"><a href="#">Elections</a></li>
+            <li class="nav-ite"><a href="#">Premium</a></li>
+            <li class="nav-ite"><a href="#">Cricket</a></li>
+            <li class="nav-ite"><a href="#">MTV Splitsvilla X5</a></li>
+            <li class="nav-ite"><a href="#">Anime</a></li>
+            <li class="nav-ite"><a href="#">NBA</a></li>
+            <li class="nav-ite"><a href="#">Kids & Family</a></li>
+            <li class="nav-ite"><a href="#">TV & Movies</a></li>
+            <li class="nav-ite"><a href="#">TATA IPL</a></li>
+            <li class="nav-ite"><a href="#">Coming Soon</a></li>
+            <li class="nav-ite"><a href="#">Live</a></li>
+            <li class="nav-ite"><a href="#">Creators Adda</a></li>
+            <li class="nav-ite"><a href="#">Badminton</a></li>
+            <li class="nav-ite"><a href="#">Free Movies</a></li>
+            <li class="nav-ite"><a href="#">Hollywood in Hindi</a></li>
+            <li class="nav-ite"><a href="#">HBO Hub</a></li>
+            <li class="nav-ite"><a href="#">NBA</a></li>
+            <li class="nav-ite"><a href="#">Peacock Hub</a></li>
+            <li class="nav-ite"><a href="#">Comedy</a></li>
+            <li class="nav-ite"><a href="#">Originals</a></li>
+            <li class="nav-ite"><a href="#">Hindi</a></li>
+            <li class="nav-ite"><a href="#">Tamil</a></li>
+        </ul>
+        <button class="next"><i class="ri-arrow-drop-right-line"></i></button>
+    </nav>
+
+    <div class="center">
+        <div class="slide">
+            <video autoplay loop controls muted width="914px" height="385.5px"
+                src="image/Zara Hatke Zara Bachke - Official Trailer _ Vicky K & Sara Ali K _ Dinesh V _ Laxman U _ 2nd June 23.mp4"></video>
+        </div>
+        <div class="slide">
+            <a href="https://www.jiocinema.com/news/live/news18-india/3952942"><img src="image/1-slider.png" alt=""></a>
+        </div>
+        <div class="slide">
+            <a href="https://www.jiocinema.com/sports/football/india-vs-kuwait-match-preview/3983173"><img
+                    src="image/4-slider.png" alt=""></a>
+        </div>
+        <div class="slide">
+            <a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img src="image/5-slider.png"
+                    alt=""></a>
+        </div>
+        <div class="slide">
+            <a href="https://www.jiocinema.com/movies/how-to-train-your-dragon/3870744"><img src="image/6-slider.png"
+                    alt=""></a>
+        </div>
+        <div class="slide">
+            <a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img src="image/7-slider.png"
+                    alt=""></a>
+        </div>
+        <div class="slide">
+            <a href="https://www.jiocinema.com/tv-shows/motu-patlu/3767884"><img src="image/8-slider.png" alt=""></a>
+        </div>
+        <div class="slide">
+            <a href="https://www.jiocinema.com/movies/oppenheimer/3914094"><img src="image/9-slider.png" alt=""></a>
+        </div>
+        <div class="slide">
+            <a href="https://www.jiocinema.com/movies/ip-man-3/3983223"><img src="image/10-slider.png" alt=""></a>
+        </div>
+    </div>
+
+
+
+    <div class="channel-row">
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/channel-hindi-1712766105782.webp" alt="Colors" class="channel-logo">
+            </a>
+        </div>
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/channel-mtv-1712766852178.avif" alt="MTV" class="channel-logo">
+            </a>
+        </div>
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/channel-kannada-1712766915268.avif" alt="Colors Kannada" class="channel-logo">
+            </a>
+        </div>
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/channel-nick-1712767223433.avif" alt="Nick" class="channel-logo">
+            </a>
+        </div>
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/channel-peacock-hub-1712767042516.webp" alt="Peacock" class="channel-logo">
+            </a>
+        </div>
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/channel-marathi-1712767089703.avif" alt="Colors Marathi" class="channel-logo">
+            </a>
+        </div>
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/channel-paramount-plus-1712767180334.webp" alt="Paramount Plus" class="channel-logo">
+            </a>
+        </div>
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/hbo-1712766657151.webp" alt="HBO" class="channel-logo">
+            </a>
+        </div>
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/channel-bangla-1712766166472.avif" alt="Colors Bangla" class="channel-logo">
+            </a>
+        </div>
+        <div class="channel-item">
+            <a href="#">
+                <img src="image/channel-gujarati-1712766447835.avif" alt="Colors Gujarati" class="channel-logo">
+            </a>
+        </div>
+    </div>
+
+    <div class="spotlight-section">
+        <h2 class="spotlight-title">In The Spotlight</h2>
+        <div class="row">
+            <div class="d-flex">
+                <div class="card-1">
+                    <img src="image/16x9-1717265987861.avif" class="card-img" alt="Game of Thrones">
+                </div>
+
+
+                <div class="card-1">
+                    <img src="image/16x9-1715779260891.avif" class="card-img" alt="Murder in Mahim">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="hotright-section">
+        <h2>Hot Right Now 🔥</h2>
+        <div class="hotright-slider">
+            <div class="slide-2">
+                <a href="https://www.jiocinema.com/movies/zara-hatke-zara-bachke/3965180"><img
+                        src="image/hotright/1x1-1717694685185.avif"></a>
+            </div>
+            <div class="slide-2">
+                <a href="https://www.jiocinema.com/tv-shows/demon-slayer-kimetsu-no-yaiba/3964407"><img
+                        src="image/hotright/1x1-1717334789597.avif"></a>
+            </div>
+            <div class="slide-2">
+                <a href="https://www.jiocinema.com/movies/tiger-nageswara-rao/3936256"><img
+                        src="image/hotright/1x1-1711597908255.avif"></a>
+            </div>
+            <div class="slide-2">
+                <a href="https://www.jiocinema.com/tv-shows/murder-in-mahim/3964969"><img
+                        src="image/hotright/mim1x1-1717694650201.webp"></a>
+            </div>
+            <div class="slide-2">
+                <a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                        src="image/hotright/1x1-1717497413670.avif"></a>
+            </div>
+            <div class="slide-2">
+                <a href="https://www.jiocinema.com/movies/silsila-sidnaaz-ka/3982873"><img
+                        src="image/hotright/1x1-1717569454723.avif"></a>
+            </div>
+            <div class="slide-2">
+                <a href="https://www.jiocinema.com/movies/custody/3981324"><img
+                        src="image/hotright/1x1-1717018518564.avif"></a>
+            </div>
+            <div class="slide-2">
+                <a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                        src="image/hotright/mangallaxmi-02-1x1-1717560392127.avif"></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="Fresh-Episodes-section">
+        <h2>Fresh Episodes 🆕</h2>
+        <div class="category-tabs">
+            <ul class="nav ">
+                <li class="nav-item active" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-hindi" type="button"
+                        role="tab" aria-controls="nav-hindi" aria-selected="true" id="nav-hindi-tab">Hindi</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-kannada" role="tab"
+                        aria-controls="nav-kannada" aria-selected="false" id="nav-kannada-tab">Kannada</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-bangle" role="tab"
+                        aria-controls="nav-bangle" aria-selected="false" id="nav-bangla-tab">Bangla</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-english" role="tab"
+                        aria-controls="nav-english" aria-selected="false" id="nav-english-tab">English</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-marathi" role="tab"
+                        aria-controls="nav-marathi" aria-selected="false" id="nav-marathi-tab">Marathi</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-gujarati" role="tab"
+                        aria-controls="nav-gujarati" aria-selected="false" id="nav-gujarati-tab">Gujarati</button>
+                </li>
+            </ul>
+        </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-hindi" role="tabpanel" aria-labelledby="nav-hindi-tab"
+                tabindex="0">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                                    src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                                    src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                                    src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                                    src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                                    src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                                    src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                                    src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                                    src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                                    src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                                    src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                                    src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-kannada" role="tabpanel" aria-labelledby="nav-kannada-tab" tabindex="0">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                                    src="image/Fresh Episodes/Kannada/1.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                                    src="image/Fresh Episodes/Kannada/2.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                                    src="image/Fresh Episodes/Kannada/3.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                                    src="image/Fresh Episodes/Kannada/4.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                                    src="image/Fresh Episodes/Kannada/5.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                                    src="image/Fresh Episodes/Kannada/6.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                                    src="image/Fresh Episodes/Kannada/7.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                                    src="image/Fresh Episodes/Kannada/8.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                                    src="image/Fresh Episodes/Kannada/9.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                                    src="image/Fresh Episodes/Kannada/10.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                                    src="image/Fresh Episodes/Kannada/11.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Fresh Episodes/Kannada/12.jpg" alt=""></a></div>
+                       <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                        src="image/Fresh Episodes/Kannada/13.jpg" alt=""></a></div> 
+                      <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                      src="image/Fresh Episodes/Kannada/14.jpg" alt=""></a></div>  
+                      <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                      src="image/Fresh Episodes/Kannada/15.jpg" alt=""></a></div> 
+                     <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Fresh Episodes/Kannada/16.jpg" alt=""></a></div>   
+                     <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                              src="image/Fresh Episodes/Kannada/17.jpg" alt=""></a></div>                                                                 
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-bangle" role="tabpanel" aria-labelledby="nav-bangla-tab" tabindex="0">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                                    src="image/Must Watch Movies/1.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                                    src="image/Must Watch Movies/2.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                                    src="image/Must Watch Movies/3.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                                    src="image/Must Watch Movies/4.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                                    src="image/Must Watch Movies/5.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                                    src="image/Must Watch Movies/6.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                                    src="image/Must Watch Movies/7.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                                    src="image/Must Watch Movies/8.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                                    src="image/Must Watch Movies/9.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                                    src="image/Must Watch Movies/10.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                                    src="image/Must Watch Movies/11.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/12.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/13.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/14.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/15.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/16.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/17.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/18.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/19.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/20.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/21.jpg" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Must Watch Movies/22.jpg" alt=""></a></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-english" role="tabpanel" aria-labelledby="nav-english-tab" tabindex="0">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                                    src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                                    src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                                    src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                                    src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                                    src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                                    src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                                    src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                                    src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                                    src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                                    src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                                    src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-marathi" role="tabpanel" aria-labelledby="nav-marathi-tab" tabindex="0">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                                    src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                                    src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                                    src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                                    src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                                    src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                                    src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                                    src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                                    src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                                    src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                                    src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                                    src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-gujarati" role="tabpanel" aria-labelledby="nav-gujarati-tab"
+                tabindex="0">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                                    src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                                    src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                                    src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                                    src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                                    src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                                    src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                                    src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                                    src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a
+                                href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                                    src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                                    src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                                    src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                        <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                    src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Top-Sports-Picks-section">
+        <h2>Top Sports Picks</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/images/ts1.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/images/ts2.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/images/ts3.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/images/ts4.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/images/ts5.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/images/ts6.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/images/ts7.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/images/ts8.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/images/ts9.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/images/ts10.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/images/ts11.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts12.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts13.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts14.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts15.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts16.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts17.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts18.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts19.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts20.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts21.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts22.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts23.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts24.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts25.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts26.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts27.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts28.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts29.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts30.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts31.webp" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts32.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts33.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts34.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/images/ts35.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+
+
+    <div class="Must-Watch-Movies-section">
+        <h2>Must Watch Movies</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Must Watch Movies/1.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Must Watch Movies/2.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Must Watch Movies/3.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Must Watch Movies/4.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Must Watch Movies/5.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Must Watch Movies/6.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Must Watch Movies/7.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Must Watch Movies/8.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Must Watch Movies/9.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Must Watch Movies/10.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Must Watch Movies/11.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/12.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/13.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/14.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/15.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/16.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/17.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/18.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/19.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/20.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/21.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Must Watch Movies/22.jpg" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <div class="Top-Picks-For-You-section">
+        <h2>Top Picks For You</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+    <div class="Celebrating-Pride-Month-section">
+        <h3>Celebrating Pride Month</h3>
+        <p>Love and diversity: Happy pride!</p>
+        <div class="carousel">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a
+                            href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                                src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                                src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                                src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                                src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                                src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a
+                            href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                                src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a
+                            href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                                src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                                src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                                src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                                src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                                src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                    <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                                src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Peacock-Finest-section">
+        <h2>Peacock's Finest</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <div class="Top-Trending-This-Week-section">
+        <h2>Top Trending This Week</h2>
+        <p></p>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+    <div class="Endless-Entertainment-section">
+        <h2>Endless Entertainment</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+    <div class="Top-10-In-India-section">
+        <h2>Top 10 In India</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+
+    <div class="T20-World-Cup-2024-section">
+        <h2>T20 World Cup 2024</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+
+
+    <div class="World-Of-Anime-section">
+        <h2>World Of Anime</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+
+    <div class="coming-soon-section">
+        <h2>Coming Soon</h2>
+        <div class="coming-soon-carousel">
+            <div class="card2">
+                <img src="image/comingn soon/3x4-cta-1718029143769.avif" alt="">
+            </div>
+            <div class="card2">
+                <img src="image/comingn soon/3x4komedy-1718170209526.avif" alt="">
+            </div>
+            <div class="card2">
+                <img src="image/comingn soon/house-of-the-dragon-3x4-language-and-label-1716968657450.avif"
+                    alt="Komedy with Akki">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="Most-Watched-In-Creators-Adda-section">
+        <h2>Most Watched In Creators Adda 🔥</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+    <div class="What-It-Takes-To-Be-An-Olympian-section">
+        <h2>What It Takes To Be An Olympian</h2>
+        <div class="coming-soon-carousel">
+            <div class="card3">
+                <img src="image/comingn soon/3x4-cta-1718029143769.avif" alt="">
+            </div>
+            <div class="card3">
+                <img src="image/comingn soon/3x4komedy-1718170209526.avif" alt="">
+            </div>
+            <div class="card3">
+                <img src="image/comingn soon/house-of-the-dragon-3x4-language-and-label-1716968657450.avif"
+                    alt="Komedy with Akki">
+            </div>
+            <div class="card3">
+                <img src="image/comingn soon/house-of-the-dragon-3x4-language-and-label-1716968657450.avif"
+                    alt="Komedy with Akki">
+            </div>
+        </div>
+    </div>
+
+    <div class="Popular-In-Kids-Family-section">
+        <h2>Popular In Kids & Family 🔥</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <div class="Watch-In-Your-Language-section">
+        <h2>Watch In Your Language</h2>
+        <div class="Watch-In-Your-Language-row">
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/channel-hindi-1712766105782.webp" alt="Colors" class="channel-logo">
+                </a>
+            </div>
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/channel-mtv-1712766852178.avif" alt="MTV" class="channel-logo">
+                </a>
+            </div>
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/channel-kannada-1712766915268.avif" alt="Colors Kannada" class="channel-logo">
+                </a>
+            </div>
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/channel-nick-1712767223433.avif" alt="Nick" class="channel-logo">
+                </a>
+            </div>
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/channel-peacock-hub-1712767042516.webp" alt="Peacock" class="channel-logo">
+                </a>
+            </div>
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/channel-marathi-1712767089703.avif" alt="Colors Marathi" class="channel-logo">
+                </a>
+            </div>
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/channel-paramount-plus-1712767180334.webp" alt="Paramount Plus"
+                        class="channel-logo">
+                </a>
+            </div>
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/hbo-1712766657151.webp" alt="HBO" class="channel-logo">
+                </a>
+            </div>
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/channel-bangla-1712766166472.avif" alt="Colors Bangla" class="channel-logo">
+                </a>
+            </div>
+            <div class="channel-item">
+                <a href="#">
+                    <img src="image/channel-gujarati-1712766447835.avif" alt="Colors Gujarati" class="channel-logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="Hollywood-In-Hindi-section">
+        <h2>Hollywood In Hindi</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+    <div class="Popular-Sports-section">
+        <h2>Popular Sports</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+    <div class="Best-Of-Studio-section">
+        <h2>Best Of Studio</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a
+                        href="https://www.jiocinema.com/tv-shows/laughter-chefs-unlimited-entertainment/3970000"><img
+                            src="image/Fresh Episodes/3x4-1717862737709.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/udaariyaan/3499475"><img
+                            src="image/Fresh Episodes/3x4-1717497457893.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhagan-chudail/3970090"><img
+                            src="image/Fresh Episodes/3x4-1717577918230.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mangal-lakshmi/3910878"><img
+                            src="image/Fresh Episodes/3x4-1718106086952.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/shiv-shakti/3763715"><img
+                            src="image/Fresh Episodes/3x4-1717235739169.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mera-balam-thanedaar/3874378"><img
+                            src="image/Fresh Episodes/3x4-1717619158018.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/mtv-splitsvilla-x5/3499820"><img
+                            src="image/Fresh Episodes/3x4-1717937819472.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/lakshmi-narayan/3942612"><img
+                            src="image/Fresh Episodes/laxmi-narayan-3x4-1718115057986.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/krishna-mohini/3942625"><img
+                            src="image/Fresh Episodes/3x4-1715680460218.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/parineetii/3500071"><img
+                            src="image/Fresh Episodes/3x4-1712660999187.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/suhaagan/3739335"><img
+                            src="image/Fresh Episodes/3x4-1709181535291.avif" alt=""></a></div>
+                <div class="swiper-slide"><a href="https://www.jiocinema.com/tv-shows/doree/3847641"><img
+                            src="image/Fresh Episodes/3x4-1717618684585.avif" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>JioCinema</h3>
+                <ul>
+                    <li><a href="#">For You</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Content Complaints</a></li>
+                </ul>
+            </div>
+            <div class="footer-section connect">
+                <h3>Connect With Us</h3>
+                <div class="social-media">
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+                </div>
+            </div>
+            <div class="footer-section download">
+                <h3>Download the App</h3>
+                <div class="app-links">
+                    <a href="#"><img src="google-play.png" alt="Google Play"></a>
+                    <a href="#"><img src="app-store.png" alt="App Store"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Viacom18 Media PVT LTD. All rights reserved.</p>
+            <img src="jio-logo.png" alt="Jio Logo">
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <script>
+        $('nav ul li a').click(function () {
+            $(this).addClass('nav-active');
+            $(this).parent().siblings().find('a').removeClass('nav-active');
+        });
+
+        $('.nav-lis').slick({
+            centerPadding: '60px',
+            slidesToShow: 11,
+            prevArrow: $('.prev'),
+            nextArrow: $('.next'),
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
+
+
+
+        $('.center').slick({
+            centerMode: true,
+            centerPadding: '250px',
+            slidesToShow: 1,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
+
+        $('.hotright-slider').slick({
+            slidesToShow: 4.5,
+            slidesToScroll: 4
+        });
+
+        var filtered = false;
+
+        $('.js-filter').on('click', function () {
+            if (filtered === false) {
+                $('.hotright-slider').slick('slickFilter', ':even');
+                $(this).text('Unfilter Slides');
+                filtered = true;
+            } else {
+                $('.hotright-slider').slick('slickUnfilter');
+                $(this).text('Filter Slides');
+                filtered = false;
+            }
+        });
+
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 6,
+            slidesPerGroup: 6,
+            spaceBetween: 40,
+            keyboard: {
+                enabled: true,
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+
+        $('.category-tabs .nav .nav-item .nav-link').click(function () {
+            $(this).addClass('category-tabsfocused ');
+            $(this).parent().siblings().find('button').removeClass('category-tabsfocused');
+        });
+    </script>
+
+
+</body>
+
+</html>
